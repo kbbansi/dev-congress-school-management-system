@@ -1,8 +1,7 @@
 package com.kwabena.schoolmanagementsystem.domain.entities;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -10,6 +9,9 @@ import java.util.Set;
 
 @Getter
 @Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity(name = "student")
 public class Student implements Serializable {
 
@@ -34,3 +36,4 @@ public class Student implements Serializable {
     private Set<StudentCourse> studentCourses;
 
 }
+
