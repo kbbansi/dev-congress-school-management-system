@@ -7,13 +7,14 @@ import com.kwabena.schoolmanagementsystem.dto.request.CreateStudentRequest;
 import com.kwabena.schoolmanagementsystem.dto.response.CommandResponseDto;
 import com.kwabena.schoolmanagementsystem.repository.StudentRepository;
 import com.kwabena.schoolmanagementsystem.services.dataservice_write.transformer.CreateStudentCommandTransformer;
+import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 @Service
-@RequiredArgsConstructor
+@AllArgsConstructor
 @Slf4j
 public class CreateStudentRequestService extends BaseCommandRequestService<CreateStudentRequest,
         CreateStudentCommand, CommandResponseDto> {

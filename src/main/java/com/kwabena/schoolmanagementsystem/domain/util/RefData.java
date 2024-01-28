@@ -29,4 +29,13 @@ public class RefData {
     public boolean checkEmailExists(String email) {
         return studentRepository.findStudentByEmail(email).isPresent();
     }
+
+    public static String generateCourseID() {
+        return "DCSC" + RefData.generateUUID();
+    }
+
+    public static String generateCourseCode(String courseName) {
+        return courseName.substring(0, 3).toUpperCase() + RefData.generateRandomNumber();
+    }
+
 }
