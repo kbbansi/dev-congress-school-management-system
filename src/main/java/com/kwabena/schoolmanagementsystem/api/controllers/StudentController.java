@@ -2,6 +2,7 @@ package com.kwabena.schoolmanagementsystem.api.controllers;
 
 import com.kwabena.schoolmanagementsystem.dto.request.CreateStudentRequest;
 import com.kwabena.schoolmanagementsystem.dto.response.CommandResponseDto;
+import com.kwabena.schoolmanagementsystem.dto.response.StudentDetailsDto;
 import com.kwabena.schoolmanagementsystem.dto.response.StudentResponseDto;
 import com.kwabena.schoolmanagementsystem.services.dataservice_read.StudentService;
 import com.kwabena.schoolmanagementsystem.services.dataservice_write.CreateStudentRequestService;
@@ -29,6 +30,11 @@ public class StudentController {
     @GetMapping
     public ResponseEntity<List<StudentResponseDto>> getAllStudents() {
         return new ResponseEntity<>(studentService.getAllStudents(), HttpStatus.OK);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<StudentDetailsDto> getStudentById(@PathVariable String id) {
+        return new ResponseEntity<>(studentService.getStudentById(id), HttpStatus.OK);
     }
 
 

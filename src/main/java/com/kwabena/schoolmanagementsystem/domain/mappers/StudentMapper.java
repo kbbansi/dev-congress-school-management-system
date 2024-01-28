@@ -1,6 +1,7 @@
 package com.kwabena.schoolmanagementsystem.domain.mappers;
 
 import com.kwabena.schoolmanagementsystem.domain.entities.Student;
+import com.kwabena.schoolmanagementsystem.dto.response.StudentDetailsDto;
 import com.kwabena.schoolmanagementsystem.dto.response.StudentResponseDto;
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
@@ -16,7 +17,7 @@ public class StudentMapper {
     private final ModelMapper mapper;
 
 
-    private StudentResponseDto mapStudentToStudentResponseDto(Student student) {
+    public StudentResponseDto mapStudentToStudentResponseDto(Student student) {
         return mapper.map(student, StudentResponseDto.class);
     }
 
@@ -27,4 +28,7 @@ public class StudentMapper {
     }
 
     // more student methods
+    public StudentDetailsDto mapStudentToStudentDetailsDto(Student student) {
+        return mapper.map(student, StudentDetailsDto.class);
+    }
 }
