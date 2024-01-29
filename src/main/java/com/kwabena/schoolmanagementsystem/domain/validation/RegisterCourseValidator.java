@@ -18,12 +18,12 @@ public class RegisterCourseValidator extends BaseDomainValidator <RegisterCourse
         Validate.notEmpty(request.getStudentID(), "studentID cannot be empty");
         Validate.notEmpty(request.getCourseID(), "courseID cannot be empty");
 
-        Validate.isTrue(refData.checkStudentExists(request.getStudentID()), "studentID does not exists");
-        Validate.isTrue(refData.checkCourseExists(request.getCourseID()), "courseID does not exists");
+        Validate.isTrue(refData.checkStudentExists(request.getStudentID()), "Student with ID " + request.getStudentID() +" does not exist");
+        Validate.isTrue(refData.checkCourseExists(request.getCourseID()), "Course with ID " + request.getCourseID() +" does not exist");
 
         // check if student is already registered for the course
         boolean isRegistered = refData.checkStudentCourseExists(request.getStudentID(), request.getCourseID());
-        Validate.isTrue(!isRegistered, "student is already registered for the course");
+        Validate.isTrue(!isRegistered, "Student with ID " + request.getStudentID() +" is already registered for the course");
 
     }
 }
