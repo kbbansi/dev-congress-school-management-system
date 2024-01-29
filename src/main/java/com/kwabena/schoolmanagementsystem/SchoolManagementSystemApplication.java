@@ -20,6 +20,7 @@ public class SchoolManagementSystemApplication {
 			public void addCorsMappings(CorsRegistry registry) {
 				String[] allowedOrigins = {
 						// list of allowed origins
+						"http://localhost:8083",
 				};
 				registry.addMapping("/**")
 						.allowedOrigins(allowedOrigins)
