@@ -1,11 +1,13 @@
 package com.kwabena.schoolmanagementsystem.domain.entities;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @Getter
 @Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "student_course")
 public class StudentCourse {
@@ -21,5 +23,8 @@ public class StudentCourse {
     @ManyToOne
     @JoinColumn(name = "course_id")
     private Course course;
+
+    @Column(nullable = false)
+    private String registrationID;
 }
 

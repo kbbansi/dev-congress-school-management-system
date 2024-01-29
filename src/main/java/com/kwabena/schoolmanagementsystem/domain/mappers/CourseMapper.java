@@ -55,6 +55,7 @@ public class CourseMapper {
         return StudentDetailsDto.builder()
                 .studentID(student.getStudentID())
                 .name(student.getName())
+                .email(student.getEmail())
                 .build();
     }
 }
